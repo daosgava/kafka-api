@@ -1,6 +1,6 @@
 # Kafka API
 
-This is a simple API that allows you to send a message to a kafka topic and consume messages from the same topic
+This is a simple API that allows you to send a message to a Kafka topic and consume messages from the same topic
 
 To install dependencies:
 ```sh
