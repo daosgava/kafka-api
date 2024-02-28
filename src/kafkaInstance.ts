@@ -1,9 +1,14 @@
-import { generateAuthToken } from "aws-msk-iam-sasl-signer-js";
+import { generateAuthTokenFromCredentialsProvider } from "aws-msk-iam-sasl-signer-js";
 import { Kafka } from "kafkajs";
 import { brokers, region } from "./config";
+import { fromEnv } from "@aws-sdk/credential-providers";
 
 const oauthBearerTokenProvider = async (region: string) => {
-	const authTokenResponse = await generateAuthToken({ region });
+	const authTokenResponse = await generateAuthTokenFromCredentialsProvider({
+		region,
+		awsCredentialsProvider: fromEnv(),
+		logger: console,
+	});
 	return {
 		value: authTokenResponse.token,
 	};
