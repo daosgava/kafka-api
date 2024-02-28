@@ -1,6 +1,10 @@
 # Kafka API
 
-This is a simple API that allows you to send a message to a Kafka topic and consume messages from the same topic
+This is a simple API that allows you to send a message to a Kafka topic and consume messages from the same topic. The Kafka cluster is hosted in AWS.
+
+## Requisites:
+- aws configure
+- kafka cluster setup
 
 To install dependencies:
 ```sh
